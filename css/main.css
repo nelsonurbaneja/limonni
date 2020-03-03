@@ -165,6 +165,12 @@ h3 {
   justify-self: end;
 }
 
+@media screen and (max-width: 350px) {
+  /* line 34, scss/components/_footer.scss */
+  .toggle {
+    margin-right: 10px;
+  }
+}
 @media screen and (max-width: 580px) {
   /* line 41, scss/components/_header.scss */
   .toggle {
@@ -565,12 +571,29 @@ ul {
   background: #343A40;
   grid-area: footerTexto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around ;
   align-items: center;
+  text-align: center;
+  line-height: 1;
 }
 .footer-texto a{
   color:steelblue;
-  font-size: 1.2rem;
+  font-size: .9rem;
+  display: block;
+  font-weight: bold;
+  line-height: 1;
+}
+@media screen and (min-width: 580px) {
+  /* line 34, scss/components/_footer.scss */
+  .footer-texto a{
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 780px) {
+  /* line 34, scss/components/_footer.scss */
+  .footer-texto {
+    justify-content: center;
+  }
 }
 /* line 18, scss/components/_footer.scss */
 .redes {
