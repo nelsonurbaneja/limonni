@@ -1,0 +1,33 @@
+.grid-container {
+    display: grid;
+    width: 98%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    grid-template-areas: "header header"
+                         "content content"
+                         "galeria galeria"
+                         "footer footer";
+    grid-template-columns: auto;
+    grid-template-rows: 50px auto auto 75px;
+    
+    @media screen and (max-width:950px) {
+        grid-template-areas: "header header"
+                             "buscar buscar"
+                             "content content"
+                             "galeria galeria"
+                             "footer footer";
+        grid-template-columns: auto auto;
+        grid-template-rows: 50px 50px auto auto 75px;
+    }
+    @media screen and (max-width:580px) {
+        grid-template-areas: "header header"
+                             "content content"
+                             "galeria galeria"
+                             "footer footer";
+        grid-template-columns: auto;
+        grid-template-rows: 50px auto auto 80px;
+    }
+}
+
+

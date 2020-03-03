@@ -1,0 +1,118 @@
+.header {
+    grid-area: header;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-areas: "logo buscar menu";
+    grid-template-columns: auto 30% auto;
+    grid-template-rows: 50px;
+    position: fixed;
+    background: white;
+    width: 98%;
+    margin: 0 auto;
+    max-width: 1200px;
+    // box-shadow: 0px 1px 1px 0px rgb(97, 96, 97);
+
+    @media screen and (max-width:950px) {
+        grid-template-areas: "logo menu"
+                             "buscar buscar";
+        grid-template-columns: auto auto;
+        grid-template-rows: 50px 1fr;
+    }
+
+    @media screen and (max-width:580px) {
+        grid-template-areas: "logo buscar toggle"
+                             "menu menu menu";
+        grid-template-columns: 15% 1fr 15%;
+        grid-template-rows: 50px auto auto;
+    }
+}
+                         
+
+.logo {
+    grid-area: logo;
+
+    img {
+        // width: 50px;
+        height: 50px;
+    }
+}
+
+.toggle {
+    grid-area: toggle;
+    display: none;
+    justify-self: end;
+    @media screen and (max-width:580px) {
+        display: block;
+    }
+}
+
+.inputBuscar {
+    grid-area: buscar;
+    background: white;
+}
+.inputBuscar .input {
+   width: 100%;
+   border-radius: 10px;
+   padding: 10px 15px;
+   border: 2px solid rgb(137, 137, 138);
+   z-index: 2000;
+}
+.inputBuscar .input:focus {
+    outline: 0px;
+ }
+
+.mainMenu {
+    grid-area: menu;
+    
+    @media screen and (max-width:580px) {
+        position: absolute;
+        background: #343A40;
+        top:0;
+        right: 0px;
+        width: 60vw;
+        min-height: 100vh;
+        transition: all .3s;
+        display: none;
+        z-index: 1000;
+        color: #eee;
+    }
+}
+.showMenu {
+    display: block;
+ }
+
+.mainMenu .menu{
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   @media screen and (max-width:580px) {
+        display: block;
+        background: #343A40;
+    }
+}
+.mainMenu .menu li {
+    margin-left: 20px;
+    @media screen and (max-width:580px) {
+        line-height: 2.5;
+        margin-left: 0;
+     }
+ }
+.mainMenu .menu li a {
+    color:  #343A40;
+    @media screen and (max-width:580px) {
+        display: block;
+        color: #eee;
+        border-bottom: 1px solid #f2f2f2;
+        padding-left: 20px;
+     }
+ }
+
+ .mainMenu .menu li a:hover {
+    color: rgb(80, 86, 92);
+    @media screen and (max-width:580px) {
+        background: rgb(80, 86, 92);
+        color: #eee;
+     }
+ }
+

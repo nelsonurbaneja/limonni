@@ -1,0 +1,646 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Princess+Sofia|Sofia&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Coming+Soon&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lemonada&display=swap");
+/* line 21, scss/config/_variables.scss */
+:root {
+  --h1-font-size: 1.4rem;
+  --h2-font-size: 1.3rem;
+  --h3-font-size: 1.1rem;
+  --body-font-size: 1rem;
+  --small-font-size: 0.825rem;
+}
+
+@media screen and (min-width: 640px) {
+  /* line 21, scss/config/_variables.scss */
+  :root {
+    --h1-font-size: 1.8rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.35rem;
+    --body-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 21, scss/config/_variables.scss */
+  :root {
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.8rem;
+    --h3-font-size: 1.55rem;
+    --body-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/* line 6, scss/base/_base.scss */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* line 11, scss/base/_base.scss */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  font-size: var(--body-font-size);
+  overflow-x: hidden;
+}
+
+/* line 19, scss/base/_base.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 23, scss/base/_base.scss */
+li {
+  list-style: none;
+}
+
+/* line 27, scss/base/_base.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 31, scss/base/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+/* line 34, scss/base/_base.scss */
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+/* line 38, scss/base/_base.scss */
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+/* line 42, scss/base/_base.scss */
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+/* line 1, scss/theme/_theme.scss */
+.small {
+  font-size: var(--small-font-size);
+}
+
+/* line 1, scss/components/_toggleMenu.scss */
+.toggle {
+  width: 1.8rem;
+  height: 1.25rem;
+  cursor: pointer;
+  background: linear-gradient(#282D31 20%, transparent 20%, transparent 40%, #282D31 40%, #282D31 60%, transparent 60%, transparent 80%, #282D31 80%, #282D31 100%);
+}
+
+/* line 13, scss/components/_toggleMenu.scss */
+.toggleC {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+/* line 19, scss/components/_toggleMenu.scss */
+.nuestroP {
+  padding-left: 20px;
+  text-align: center;
+}
+
+/* line 1, scss/components/_header.scss */
+.header {
+  grid-area: header;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-areas: "logo buscar menu";
+  grid-template-columns: auto 30% auto;
+  grid-template-rows: 50px;
+  position: fixed;
+  background: white;
+  width: 98%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 950px) {
+  /* line 1, scss/components/_header.scss */
+  .header {
+    grid-template-areas: "logo menu"
+ "buscar buscar";
+    grid-template-columns: auto auto;
+    grid-template-rows: 50px 1fr;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  /* line 1, scss/components/_header.scss */
+  .header {
+    grid-template-areas: "logo buscar toggle"
+ "menu menu menu";
+    grid-template-columns: 15% 1fr 15%;
+    grid-template-rows: 50px auto auto;
+  }
+}
+
+/* line 32, scss/components/_header.scss */
+.logo {
+  grid-area: logo;
+}
+
+/* line 35, scss/components/_header.scss */
+.logo img {
+  height: 50px;
+}
+
+/* line 41, scss/components/_header.scss */
+.toggle {
+  grid-area: toggle;
+  display: none;
+  justify-self: end;
+}
+
+@media screen and (max-width: 580px) {
+  /* line 41, scss/components/_header.scss */
+  .toggle {
+    display: block;
+  }
+}
+
+/* line 50, scss/components/_header.scss */
+.inputBuscar {
+  grid-area: buscar;
+  background: white;
+}
+
+/* line 54, scss/components/_header.scss */
+.inputBuscar .input {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 15px;
+  border: 2px solid #89898a;
+  z-index: 2000;
+}
+
+/* line 61, scss/components/_header.scss */
+.inputBuscar .input:focus {
+  outline: 0px;
+}
+
+/* line 65, scss/components/_header.scss */
+.mainMenu {
+  grid-area: menu;
+}
+
+@media screen and (max-width: 580px) {
+  /* line 65, scss/components/_header.scss */
+  .mainMenu {
+    position: absolute;
+    background: #343A40;
+    top: 0;
+    right: 0px;
+    width: 60vw;
+    min-height: 100vh;
+    transition: all .3s;
+    display: none;
+    z-index: 1000;
+    color: #eee;
+  }
+}
+
+/* line 81, scss/components/_header.scss */
+.showMenu {
+  display: block;
+}
+
+/* line 85, scss/components/_header.scss */
+.mainMenu .menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media screen and (max-width: 580px) {
+  /* line 85, scss/components/_header.scss */
+  .mainMenu .menu {
+    display: block;
+    background: #343A40;
+  }
+}
+
+/* line 94, scss/components/_header.scss */
+.mainMenu .menu li {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 580px) {
+  /* line 94, scss/components/_header.scss */
+  .mainMenu .menu li {
+    line-height: 2.5;
+    margin-left: 0;
+  }
+}
+
+/* line 101, scss/components/_header.scss */
+.mainMenu .menu li a {
+  color: #343A40;
+}
+
+@media screen and (max-width: 580px) {
+  /* line 101, scss/components/_header.scss */
+  .mainMenu .menu li a {
+    display: block;
+    color: #eee;
+    border-bottom: 1px solid #f2f2f2;
+    padding-left: 20px;
+  }
+}
+
+/* line 111, scss/components/_header.scss */
+.mainMenu .menu li a:hover {
+  color: #50565c;
+}
+
+@media screen and (max-width: 580px) {
+  /* line 111, scss/components/_header.scss */
+  .mainMenu .menu li a:hover {
+    background: #50565c;
+    color: #eee;
+  }
+}
+
+/* line 1, scss/components/_menuVertical.scss */
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-areas: "menuVertical hero";
+  grid-template-columns: 30% 1fr;
+  grid-template-rows: 275px;
+}
+
+@media screen and (max-width: 780px) {
+  /* line 1, scss/components/_menuVertical.scss */
+  .content {
+    grid-template-areas: "menuVertical"
+ "hero";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+}
+
+/* line 18, scss/components/_menuVertical.scss */
+.menuVertical {
+  grid-area: menuVertical;
+}
+
+/* line 23, scss/components/_menuVertical.scss */
+.hero {
+  grid-area: hero;
+  height: 275px;
+  width: 100%;
+  line-height: 0;
+  font-size: 0;
+}
+
+/* line 32, scss/components/_menuVertical.scss */
+.hero .hero-image {
+  min-width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* line 39, scss/components/_menuVertical.scss */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 44, scss/components/_menuVertical.scss */
+.menu-vertical {
+  width: 100%;
+  height: 277px;
+  overflow-y: auto;
+  background: white;
+  display: none;
+}
+
+/* line 55, scss/components/_menuVertical.scss */
+.menu-vertical li a {
+  color: #2a2f33;
+  display: block;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e0dcdc;
+  font-family: 'Sofia', cursive;
+  font-family: 'Coming Soon', cursive;
+  font-family: 'Lemonada', cursive;
+  font-size: .9rem;
+  text-align: center;
+}
+
+/* line 66, scss/components/_menuVertical.scss */
+.menu-vertical li a:hover {
+  background: #bbbfc2;
+}
+
+/* line 70, scss/components/_menuVertical.scss */
+.ocultar {
+  display: none;
+}
+
+/* line 74, scss/components/_menuVertical.scss */
+.menu-vertical ul > li a {
+  background: #dddddd;
+  padding-left: 30px;
+  text-align: center;
+}
+
+/* line 81, scss/components/_menuVertical.scss */
+.menu-vertical .active-vertical > a {
+  background: #bbbfc2;
+}
+
+/* line 85, scss/components/_menuVertical.scss */
+.menu-toggle {
+  width: 100%;
+  height: 50px;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+/* media query */
+@media screen and (min-width: 780px) {
+  /* line 95, scss/components/_menuVertical.scss */
+  .menu-vertical {
+    display: block;
+  }
+  /* line 98, scss/components/_menuVertical.scss */
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* line 103, scss/components/_menuVertical.scss */
+.nuestroP {
+  font-family: 'Lemonada', cursive;
+}
+
+@media screen and (max-width: 580px) {
+  /* line 103, scss/components/_menuVertical.scss */
+  .nuestroP {
+    font-size: .8rem;
+  }
+}
+
+/* line 1, scss/components/_galeria.scss */
+.galeria {
+  grid-area: galeria;
+  width: 100%;
+  margin: 0;
+  min-height: 90vh;
+}
+
+/* line 8, scss/components/_galeria.scss */
+.galeria-container {
+  background-image: url("../img/fondo.jpg");
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(230px - 15px), 1fr));
+  justify-self: center;
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+/* line 17, scss/components/_galeria.scss */
+.galeria h3 {
+  margin: 15px 10px;
+}
+
+/* line 21, scss/components/_galeria.scss */
+.galeria-item {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-bottom: 1px;
+  border: 1px solid #bdb9b9;
+}
+
+/* line 30, scss/components/_galeria.scss */
+.galeria-item:hover {
+  background: white;
+  border: 1px solid #727171;
+}
+
+/* line 35, scss/components/_galeria.scss */
+.galeria-item--img-container {
+  width: 200px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+/* line 41, scss/components/_galeria.scss */
+.galeria-item--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* line 47, scss/components/_galeria.scss */
+.galeria-item--description {
+  background: rgba(255, 255, 255, 0.7);
+  min-height: 75px;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+
+/* line 54, scss/components/_galeria.scss */
+.galeria-item--description a {
+  color: #181414;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+/* line 60, scss/components/_galeria.scss */
+.galeria-item--price p {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background: lightskyblue;
+  border-radius: 30px;
+  padding: 5px 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* line 1, scss/components/_iconos.scss */
+.icon-down-open-big {
+  margin-left: 20px;
+}
+
+/* line 5, scss/components/_iconos.scss */
+.icon-down-open-big::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* line 13, scss/components/_iconos.scss */
+.icon-up-open-big {
+  margin-left: 20px;
+}
+
+/* line 17, scss/components/_iconos.scss */
+.icon-up-open-big::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* line 25, scss/components/_iconos.scss */
+.icon-facebook::before {
+  color: #4267B2;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+  top: 5px;
+}
+
+/* line 35, scss/components/_iconos.scss */
+.icon-instagrem::before {
+  font-size: 1.3rem;
+  border-radius: 20%;
+  background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+  color: #eee;
+  height: 100%;
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+  top: 5px;
+}
+
+/* line 47, scss/components/_iconos.scss */
+.icon-abajo::before {
+  font-weight: 700;
+  color: black;
+}
+
+/* line 51, scss/components/_iconos.scss */
+.icon-abajo {
+  position: relative;
+  z-index: 1;
+  top: 5px;
+  left: 10px;
+}
+
+/* line 58, scss/components/_iconos.scss */
+.icon-arriba {
+  position: relative;
+  top: 5px;
+  left: 10px;
+}
+
+/* line 1, scss/components/_footer.scss */
+.footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-areas: "redes"
+ "footerTexto";
+  grid-template-columns: 1fr;
+  grid-template-rows: 50% 50%;
+}
+
+/* line 11, scss/components/_footer.scss */
+.footer-texto {
+  background: #343A40;
+  grid-area: footerTexto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-texto a{
+  color:steelblue;
+  font-size: 1.2rem;
+}
+/* line 18, scss/components/_footer.scss */
+.redes {
+  background: white;
+  grid-area: redes;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 26, scss/components/_footer.scss */
+.redes-texto {
+  color: #343A40;
+  margin: 0;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 34, scss/components/_footer.scss */
+.footer .footer-texto {
+  color: white;
+  margin: 0;
+}
+
+@media screen and (max-width: 580px) {
+  /* line 34, scss/components/_footer.scss */
+  .footer .footer-texto {
+    font-size: .8rem;
+    text-align: center;
+  }
+}
+
+/* line 1, scss/layout/_grid-container.scss */
+.grid-container {
+  display: grid;
+  width: 98%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  grid-template-areas: "header header"
+ "content content"
+ "galeria galeria"
+ "footer footer";
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto auto 75px;
+}
+
+@media screen and (max-width: 950px) {
+  /* line 1, scss/layout/_grid-container.scss */
+  .grid-container {
+    grid-template-areas: "header header"
+ "buscar buscar"
+ "content content"
+ "galeria galeria"
+ "footer footer";
+    grid-template-columns: auto auto;
+    grid-template-rows: 50px 50px auto auto 75px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  /* line 1, scss/layout/_grid-container.scss */
+  .grid-container {
+    grid-template-areas: "header header"
+ "content content"
+ "galeria galeria"
+ "footer footer";
+    grid-template-columns: auto;
+    grid-template-rows: 50px auto auto 80px;
+  }
+}

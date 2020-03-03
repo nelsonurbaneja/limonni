@@ -1,0 +1,62 @@
+.icon-down-open-big {
+    margin-left: 20px;
+}
+
+.icon-down-open-big::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+} 
+
+.icon-up-open-big {
+    margin-left: 20px;
+}
+
+.icon-up-open-big::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+} 
+
+.icon-facebook::before {
+    color: #4267B2;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+    top: 5px;
+}
+
+.icon-instagrem::before {
+    font-size: 1.3rem;
+    border-radius: 20%;
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    color: #eee;
+    height: 100%;
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+    top: 5px;
+}
+
+.icon-abajo::before {
+    font-weight: 700;
+    color: black;
+}
+.icon-abajo {
+    position: relative;
+    z-index: 1;
+    top: 5px;
+    left: 10px;
+}
+
+.icon-arriba {
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
